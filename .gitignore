@@ -63,3 +63,4 @@ cythonize.dat
 
 !*/src/*.c
 !*/src/*.cpp
+flask/
