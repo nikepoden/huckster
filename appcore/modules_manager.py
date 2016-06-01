@@ -1,7 +1,9 @@
+from appcore import config
 import imp
 import os
 
-ModuleFolder = (os.path.join(os.getcwd(),'modules'))
+modulesdir = config.getModulesDir()
+ModuleFolder = (os.path.join(os.getcwd(), modulesdir))
 MainModule = "__init__"
 loadedModules = []
 
@@ -13,7 +15,7 @@ def getPlugins():
         if not os.path.isdir(location) or not MainModule + ".py" in os.listdir(location):
             continue
         info = imp.find_module(MainModule, [location])
-        print info
+        #print info
         modules.append({"name": i, "info": info})
     return modules
 
