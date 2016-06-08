@@ -16,3 +16,9 @@ class BDProperties:
                 return self.cfgParser.get('database_connection','password');
         def getModulesDir(self):
                 return self.cfgParser.get('modules','modulesdir');
+        def getLoggerFormat(self):
+                return self.cfgParser.get('logger','format');
+        def getLoggerFile(self):
+                return self.cfgParser.get('logger','file');
+        def getLoggerLevel(self):
+                return self.cfgParser.get('logger','level');

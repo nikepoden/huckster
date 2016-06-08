@@ -1,5 +1,6 @@
 from moduleBase import ModuleBase
 from flask import abort, jsonify, request
+import logging
 
 def GetModuleInstance():
     return ModuleComment()
@@ -25,7 +26,7 @@ class ModuleComment(ModuleBase):
         self.SetGet(self.execGet)
         self.SetGetById(self.execGetById)
         self.SetPost(self.execPost)
-        print "Loaded module: {0}".format(self)
+        logging.debug(u"Loaded module: {0}".format(self))
 
     def execGet(self):
         return jsonify({'messages': comments})
